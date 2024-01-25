@@ -10,3 +10,26 @@ body {
     border: 1px solid #fff;
     cursor: pointer;
 }
+
+.nav-link {
+    font-size: 30px; 
+}
+
+.navbar-brand {
+    font-size: 50px;
+}
+
+
+/* Estilo para las tarjetas */
+.card-project {
+    height: 400px; /* Establece la altura deseada para todas las tarjetas */
+    width: 100%; /* Opcional: Puedes establecer un ancho fijo si lo deseas */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.card-project img {
+    width: 100%; /* Establece el ancho al 100% para que se ajuste al contenedor */
+    height: 100%; /* Establece la altura al 100% para ocupar toda la altura de la tarjeta */
+    max-height: 245px;
+    object-fit: cover; /* Ajusta la imagen para cubrir la tarjeta sin deformarla */
+}
