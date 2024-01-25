@@ -10,11 +10,11 @@
  </div>
 
  <div class="col-md-8 my-auto">
-    <h1> I am <strong>Rafael Deacon</strong></h1>
-    <h2>I am a Python Fullstack Developer</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime assumenda quae fuga modi explicabo inventore dolor dolorum commodi voluptatem voluptatibus veniam, libero beatae possimus dolorem sit obcaecati, sunt deserunt cupiditate iure delectus temporibus, laboriosam nemo! Dignissimos non similique consequuntur excepturi praesentium nisi impedit velit. Minus, deserunt quia natus ullam itaque consequuntur tempore dignissimos ipsum eum, perferendis sit placeat, odio blanditiis error. Facere repellat, accusantium adipisci quas consequuntur pariatur eveniet magnam dignissimos necessitatibus id quidem tempora consequatur veritatis quos rerum distinctio optio cumque doloribus ad ipsum, repudiandae doloremque blanditiis delectus? Deleniti nemo magnam perferendis atque esse hic natus soluta veniam praesentium?</p>
+    <h1> Hi, I am <strong>Rafael Deacon!</strong></h1>
+    <h2>I am also a Python Fullstack developer.</h2>
+    <p>Hello, I'm Rafael Deacon, a Junior Developer with a passion for creating software. I stand out for approaching challenges with creativity and solving problems efficiently. My goal is to share experiences through projects that reflect my dedication and love for programming. Explore my portfolio and join my journey in the world of software development.</p>
     <a href="{% static 'portfolio/CV test.pdf' %}"
-        class="btn btn-primary btn-lg rounded-0 my-3"
+        class="btn btn-primary btn-lg rounded my-3"
         >Download
     </a>
  </div>
@@ -23,7 +23,7 @@
 
 <div class="row my-4 text-center">
     <h3>My Projects</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, temporibus.</p>
+    <p>This is a small sample of my most notable projects</p>
 
 {% for project in projects %}
 
@@ -43,9 +43,47 @@
     </div>
 </div>
 
+
+
 {% endfor %}
 
+<footer class="footer" id="contacto">
+    <section class="footer__container container">
+        <p>Let's work together</p>
+        <button id="copyEmailButton" class="btn btn-primary btn-lg rounded my-3">
+            Email me
+        </button>
+        <p>&copy;Rafael Deacon 2024 
+            <img src="{% static 'portfolio/github.png' %}" class="img-fluid githu" alt=""> 
+            <img src="{% static 'portfolio/linkedin.png' %}" class="img-fluid linkedin" alt="">
+        </p>
+    </section>
+</footer>
+
+<script>
+    document.getElementById('copyEmailButton').addEventListener('click', function() {
+        var emailToCopy = 'rafaeldeacon15@gmail.com'; // Reemplaza con tu dirección de correo electrónico
+        var textarea = document.createElement('textarea');
+        textarea.value = emailToCopy;
+
+        // Asegurarse de que el textarea no sea visible
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = 0;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+        document.execCommand('copy');
+
+        document.body.removeChild(textarea);
+
+        alert('Dirección de correo copiada al portapapeles: ' + emailToCopy);
+    });
+</script>
+
+
 {% endblock %}
+
 
 
 </div>

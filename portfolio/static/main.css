@@ -16,7 +16,16 @@ body {
 }
 
 .navbar-brand {
-    font-size: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ajusta según sea necesario */
+    
+}
+
+.navbar {
+    height: 50px;   
 }
 
 
@@ -32,4 +41,22 @@ body {
     height: 100%; /* Establece la altura al 100% para ocupar toda la altura de la tarjeta */
     max-height: 245px;
     object-fit: cover; /* Ajusta la imagen para cubrir la tarjeta sin deformarla */
+}
+
+.col-md-8 h1,
+.col-md-8 h2 {
+    margin-bottom: 1rem;
+}
+
+.footer {
+    margin-top: 10rem;
+}
+
+.githu {
+    height: 25px;
+    margin-left: 6rem;
+}
+
+.linkedin {
+    height: 24px;    
 }
