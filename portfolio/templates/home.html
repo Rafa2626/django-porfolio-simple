@@ -4,57 +4,46 @@
 
 {% load static %}
 
-<header class="row bg-black">
+<header class="row">
     <div class="col-md-4">
-        <img src="{% static 'portfolio/profile.png' %}" class="img-fluid"  alt="">
- </div>
+        <img src="{% static 'portfolio/profile.png' %}" class="img-fluid perfil"  alt="">
+    </div>
 
- <div class="col-md-8 my-auto">
-    <h1> Hi, I am <strong>Rafael Deacon!</strong></h1>
-    <h2>I am also a Python Fullstack developer.</h2>
-    <p>Hello, I'm Rafael Deacon, a Junior Developer with a passion for creating software. I stand out for approaching challenges with creativity and solving problems efficiently. My goal is to share experiences through projects that reflect my dedication and love for programming. Explore my portfolio and join my journey in the world of software development.</p>
-    <a href="{% static 'portfolio/CV test.pdf' %}"
-        class="btn btn-primary btn-lg rounded my-3"
-        >Download
-    </a>
- </div>
-
+    <div class="col-md-8 my-auto">
+        <h1 class="hi"> Hi, I am <strong>Agustina Scarlato!</strong></h1>
+        <h2>I am also a Python Fullstack developer.</h2>
+        <p>Hello, I'm Rafael Deacon, a Junior Developer with a passion for creating software. I stand out for approaching challenges with creativity and solving problems efficiently. My goal is to share experiences through projects that reflect my dedication and love for programming. Explore my portfolio and join my journey in the world of software development.</p>
+        <a href="{% static 'portfolio/CV test.pdf' %}" class="btn btn-primary btn-lg rounded my-3">Download</a>
+    </div>
 </header>
 
 <div class="row my-4 text-center">
     <h3>My Projects</h3>
     <p>This is a small sample of my most notable projects</p>
 
-{% for project in projects %}
-
-<div class="col-md-4 p-4">
-    <div class="card bg-black card-project">
-        <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
-        <div class="card-body">
-            <h2>{{project.title}}</h2>
-            <p>{{project.description}}</p>
-            
-            {% if project.url %}
-            <a href="{{project.url}}" target="_blank" class="btn btn-primary btn-lg rounded my-3">
-                More Info
-            </a>
-            {% endif %} 
+    {% for project in projects %}
+        <div class="col-md-4 p-4">
+            <div class="card bg-black card-project">
+                <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+                <div class="card-body">
+                    <h2>{{project.title}}</h2>
+                    <p>{{project.description}}</p>
+                    
+                    {% if project.url %}
+                        <a href="{{project.url}}" target="_blank" class="btn btn-primary btn-lg rounded my-3">More Info</a>
+                    {% endif %} 
+                </div>
+            </div>
         </div>
-    </div>
+    {% endfor %}
 </div>
 
-
-
-{% endfor %}
-
-<footer class="footer" id="contacto">
+<footer class="footer bg-different-color" id="contacto">
     <section class="footer__container container">
-        <p>Let's work together!</p>
-        <button id="copyEmailButton" class="btn btn-primary btn-lg rounded my-3">
-            Email me
-        </button>
+        <p class="work">Let's work together!</p>
+        <button id="copyEmailButton" class="btn btn-primary btn-lg rounded my-3 boton">Email me</button>
         <p>&copy;Rafael Deacon 2024 
-            <img src="{% static 'portfolio/github.png' %}" class="img-fluid githu" alt=""> 
+            <img src="{% static 'portfolio/github.png' %}" class="img-fluid github" alt=""> 
             <img src="{% static 'portfolio/linkedin.png' %}" class="img-fluid linkedin" alt="">
         </p>
     </section>
@@ -76,13 +65,13 @@
 
         document.body.removeChild(textarea);
 
-        alert('Dirección de correo copiada al portapapeles: ' + emailToCopy);
+        Swal.fire({
+            title: 'Email correctly copied!',
+            text: emailToCopy,
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        });
     });
 </script>
 
-
 {% endblock %}
-
-
-
-</div>

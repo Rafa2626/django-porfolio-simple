@@ -1,9 +1,9 @@
 body {
-    background: #090909;
+    background: #A3E4D7 ;
 }
 
-.bg-black {
-    background: #000;
+.row {
+    background: #45B39D;
 }
 
 .card-project:hover {
@@ -12,20 +12,18 @@ body {
 }
 
 .nav-link {
-    font-size: 30px; 
+    font-size: 30px;
+    color:#fff;
 }
 
 .navbar-brand {
     font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%; /* Ajusta según sea necesario */
-    
+    color:#fff;
 }
 
 .navbar {
-    height: 50px;   
+    height: 50px;
+    background-color: #45B39D;   
 }
 
 
@@ -49,14 +47,39 @@ body {
 }
 
 .footer {
-    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;  /* Alinea el texto al centro */
 }
 
-.githu {
-    height: 25px;
-    margin-left: 6rem;
+.github {
+    max-width: 40px;
+    height: 24px;
+    width: 24px;
+    margin-left: 3rem;
+    cursor: pointer;
 }
 
 .linkedin {
-    height: 24px;    
+    height: 24px;
+    margin-left: 0.3rem;
+    cursor: pointer;    
+}
+
+.work {
+    font-size: 30px;
+}
+
+.hi {
+    color: #F39C12 ;
+}
+
+.bg-different-color {
+    background-color:#A3E4D7;
+}
+
+.boton {
+    margin: 0 auto;
 }
