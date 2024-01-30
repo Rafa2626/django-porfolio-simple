@@ -108,6 +108,7 @@ body {
     width: 100%; /* Establece el ancho al 100% para que se ajuste al contenedor */
     height: 100%; /* Establece la altura al 100% para ocupar toda la altura de la tarjeta */
     max-height: 245px;
+    min-height: 245px;
     object-fit: cover; /* Ajusta la imagen para cubrir la tarjeta sin deformarla */
 }
 
@@ -118,6 +119,11 @@ body {
 .custom-card .custom-p-color {
     color: #fff; 
 }
+
+.card.card-body.custom-card {
+    background-color: #45B39D;
+}
+
 
 .card-body h2,
 .card-body p {
