@@ -4,26 +4,23 @@
 
 {% load static %}
 
-<header class="row">
-    <div class="col-md-4">
-        <img src="{% static 'portfolio/profile.png' %}" class="img-fluid perfil"  alt="">
-    </div>
-
-    <div class="col-md-8 my-auto">
-        <h1 class="hi"> Hi, I am <strong>Agustina Scarlato!</strong></h1>
-        <h2>I am also a Python Fullstack developer.</h2>
-        <p>Hello, I'm Rafael Deacon, a Junior Developer with a passion for creating software. I stand out for approaching challenges with creativity and solving problems efficiently. My goal is to share experiences through projects that reflect my dedication and love for programming. Explore my portfolio and join my journey in the world of software development.</p>
-        <a href="{% static 'portfolio/CV test.pdf' %}" class="btn btn-primary btn-lg rounded my-3">Download</a>
-    </div>
+<header class="hero">
+    <section class="hero__container container">
+        <h1 class="hero__title">Welcome to my portfolio!</h1>
+        <p class="hero__paragraph">Here you can see a little about me as a person and what I know about programming :)</p>
+        <a href="#projects" class="cta">Start the tour now!</a>
+    </section>
 </header>
 
-<div class="row my-4 text-center">
+<div class= "container p-4">
+<div class="row my-4 text-center" id=projects>
+    
     <h3>My Projects</h3>
     <p>This is a small sample of my most notable projects</p>
 
     {% for project in projects %}
         <div class="col-md-4 p-4">
-            <div class="card bg-black card-project">
+            <div class="card bg-white card-project">
                 <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
                 <div class="card-body">
                     <h2>{{project.title}}</h2>
@@ -38,13 +35,28 @@
     {% endfor %}
 </div>
 
-<footer class="footer bg-different-color" id="contacto">
+
+
+<div class="row my 4 text-center">
+    
+    <h3 class="about">About me!</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima maiores architecto repellendus pariatur. Maxime sed culpa quos perspiciatis, impedit id beatae magni quae numquam exercitationem vitae vero aliquam distinctio sequi. Dicta corporis temporibus velit nisi amet labore beatae quam veritatis ullam illo reiciendis delectus obcaecati quo explicabo neque adipisci vel, repellendus repellat voluptates! Saepe alias perspiciatis id nisi quas minima quos magni impedit vitae assumenda. Eaque molestias mollitia nobis quibusdam ut ullam saepe pariatur distinctio dolore, ea voluptate, sed dolorum similique cum in expedita. Enim natus, blanditiis sequi incidunt voluptas hic dolores quam in voluptatum omnis atque tempore quos assumenda.
+    </p>    
+</div>
+</div>
+
+
+<footer class="footer bg-different-color full-height-section" id="contacto" >
     <section class="footer__container container">
         <p class="work">Let's work together!</p>
         <button id="copyEmailButton" class="btn btn-primary btn-lg rounded my-3 boton">Email me</button>
         <p>&copy;Rafael Deacon 2024 
-            <img src="{% static 'portfolio/github.png' %}" class="img-fluid github" alt=""> 
-            <img src="{% static 'portfolio/linkedin.png' %}" class="img-fluid linkedin" alt="">
+            <a href="https://github.com/Rafa2626">
+                <img src="{% static 'portfolio/github.png' %}" class="img-fluid github" alt="">
+            </a>
+            <a href="https://ar.linkedin.com/">
+                <img src="{% static 'portfolio/linkedin.png' %}" class="img-fluid linkedin" alt="">
+            </a>                     
         </p>
     </section>
 </footer>
@@ -72,6 +84,7 @@
             confirmButtonText: 'Cool'
         });
     });
+
 </script>
 
 {% endblock %}

@@ -1,5 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: #A3E4D7 ;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 350px 0;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    max-height: 900px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+    margin: 0; /* Agrega esta línea para asegurarte de que no haya margen */
+    padding: 0;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('portfolio/computer.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+    margin: 0; /* Agrega esta línea para asegurarte de que no haya margen */
+    padding: 0;
+}
+
+.hero__container {
+    max-width: 1800px;
+    --padding-container: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 3rem;
+}
+
+.hero__paragraph {
+    margin-bottom: 20px;
+}
+
+.cta {
+    display: inline-block;
+    background-color: #2091F9;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
 }
 
 .row {
@@ -7,7 +77,7 @@ body {
 }
 
 .card-project:hover {
-    border: 1px solid #fff;
+    border: 5px solid #A3E4D7;
     cursor: pointer;
 }
 
@@ -23,7 +93,7 @@ body {
 
 .navbar {
     height: 50px;
-    background-color: #45B39D;   
+    background-color: #45B39D;  
 }
 
 
@@ -41,17 +111,35 @@ body {
     object-fit: cover; /* Ajusta la imagen para cubrir la tarjeta sin deformarla */
 }
 
-.col-md-8 h1,
-.col-md-8 h2 {
-    margin-bottom: 1rem;
+.custom-card .custom-h2-color {
+    color: #fff; 
 }
+
+.custom-card .custom-p-color {
+    color: #fff; 
+}
+
+.card-body h2,
+.card-body p {
+    color: #45B39D;
+
+}
+
+.card-body h2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+}
+
 
 .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;  /* Alinea el texto al centro */
+    text-align: center; 
 }
 
 .github {
@@ -70,11 +158,14 @@ body {
 
 .work {
     font-size: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+    color: #fff;
 }
 
-.hi {
-    color: #F39C12 ;
-}
 
 .bg-different-color {
     background-color:#A3E4D7;
@@ -82,4 +173,18 @@ body {
 
 .boton {
     margin: 0 auto;
+}
+
+.row h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+    color: #ee9f7a;
+}
+
+.about {
+    justify-content: center;
+    text-align: center; 
 }
