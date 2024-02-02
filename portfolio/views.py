@@ -3,16 +3,7 @@ from .models import Project
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-#from .forms import CustomUserCreationForm 
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render
-
-def my_view(request):
-    # Otros procesos y lógica de vista aquí...
-    context = {
-        'user': request.user  # Asegúrate de enviar el objeto de usuario al contexto
-    }
-    return render(request, 'login.html', context)
 
 def home(request):
     projects = Project.objects.all()

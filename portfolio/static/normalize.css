@@ -219,8 +219,11 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    -webkit-appearance: button;
+    -webkit-appearance: button; /* Para navegadores basados en WebKit/Blink como Safari y Chrome */
+    appearance: button; /* Estándar */
 }
+
+
 
 /**
    * Remove the inner border and padding in Firefox.
@@ -318,11 +321,10 @@ textarea {
    * 2. Correct the outline style in Safari.
    */
 
-[type="search"] {
-    -webkit-appearance: textfield;
-    /* 1 */
+   [type="search"] {
+    -webkit-appearance: textfield; /* Para navegadores basados en WebKit/Blink como Safari y Chrome */
+    appearance: textfield; /* Estándar */
     outline-offset: -2px;
-    /* 2 */
 }
 
 /**
