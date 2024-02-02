@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!-- <style>
+  /* Estilos generales */
+  body, h3, .card-body, .card-link, .btn {
+    color: #000; /* Cambia el color del texto a negro */
+  }
+
+  /* Estilos para el formulario de inicio de sesión */
+  h3 {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+
+  form {
+    max-width: 40rem; /* Hace el formulario más ancho */
+    margin: auto;
+  }
+
+  .card {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera para un efecto elevado */
+    border-radius: 10px; /* Bordes redondeados para la tarjeta */
+  }
+
+  .card-body {
+    text-align: center;
+    padding: 20px; /* Aumenta el relleno para más espacio dentro de la tarjeta */
+  }
+
+  .card-title {
+    font-size: 2rem; /* Hace el título más grande */
+  }
+
+  /* Ajustes para los enlaces y el botón */
+  .card-link, .btn {
+    display: inline-block;
+    margin: 20px 10px 0; /* Ajusta el margen para mejor espaciado */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+  }
+
+  .btn-primary {
+    background-color: #007bff; /* Color de fondo para el botón de inicio de sesión */
+    color: white; /* Color del texto para el botón */
+    border: none; /* Elimina el borde del botón */
+    padding: 10px 20px; /* Ajusta el relleno para hacer el botón más grande */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3; /* Oscurece el botón al pasar el mouse */
+  }
+
+  .float-end {
+    float: none; /* Centra el botón debajo del formulario */
+    display: block;
+    margin: auto;
+  }
+
+  </style>
+
+<h3>REGISTRO DE USUARIO</h3>
+
+<br>
+<form id="register-form" action="" method="post">
+  {% csrf_token %}
+<div class="card mx-auto" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">Complete todos los campos</h5>
+    {{ form | crispy }}
+<div id="div_id_username" class="mb-3"> <label for="id_username" class="form-label requiredField">
+            Nombre de usuario<span class="asteriskField">*</span> </label> <input type="text" name="username" maxlength="150" autofocus="" class="textinput form-control" required="" aria-describedby="id_username_helptext" id="id_username"> <div id="id_username_helptext" class="form-text">Requerido. 150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_ </div> </div> <div id="div_id_first_name" class="mb-3"> <label for="id_first_name" class="form-label">
+            Nombre
+        </label> <input type="text" name="first_name" maxlength="150" class="textinput form-control" id="id_first_name"> </div> <div id="div_id_last_name" class="mb-3"> <label for="id_last_name" class="form-label">
+            Apellidos
+        </label> <input type="text" name="last_name" maxlength="150" class="textinput form-control" id="id_last_name"> </div> <div id="div_id_email" class="mb-3"> <label for="id_email" class="form-label requiredField">
+            Email<span class="asteriskField">*</span> </label> <input type="email" name="email" maxlength="320" class="emailinput form-control" required="" id="id_email"> </div> <div id="div_id_password1" class="mb-3"> <label for="id_password1" class="form-label requiredField">
+            Contraseña<span class="asteriskField">*</span> </label> <input type="password" name="password1" autocomplete="new-password" class="passwordinput form-control" required="" aria-describedby="id_password1_helptext" id="id_password1"> <div id="id_password1_helptext" class="form-text"><ul><li>Su contraseña no puede asemejarse tanto a su otra información personal.</li><li>Su contraseña debe contener al menos 8 caracteres.</li><li>Su contraseña no puede ser una clave utilizada comúnmente.</li><li>Su contraseña no puede ser completamente numérica.</li></ul></div> </div> <div id="div_id_password2" class="mb-3"> <label for="id_password2" class="form-label requiredField">
+            Contraseña (confirmación)<span class="asteriskField">*</span> </label> <input type="password" name="password2" autocomplete="new-password" class="passwordinput form-control" required="" aria-describedby="id_password2_helptext" id="id_password2"> <div id="id_password2_helptext" class="form-text">Para verificar, introduzca la misma contraseña anterior.</div> </div>
+
+    <a href="/" class="card-link">Inicio</a>
+    <a href="{% url 'hellologin' %}" class="card-link">Iniciar sesion</a>
+    <button class="btn btn-sm btn-primary float-end" type="submit">Registrarse</button>
+  </div>
+</div>
+</form> -->
+{% endblock %}

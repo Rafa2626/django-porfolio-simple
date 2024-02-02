@@ -27,7 +27,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('blog/', include('blog.urls')),
-    path('login', hellologin, name="hellologin"),
+    path('login/', hellologin, name="hellologin"),
+    path('register/', helloregister, name="helloregister"),
+    path('home', home, name="home"),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
