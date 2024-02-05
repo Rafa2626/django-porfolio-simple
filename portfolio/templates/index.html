@@ -8,15 +8,8 @@
     <section class="hero__container container">
         <h1 class="hero__title">Welcome to my portfolio!</h1>
         <p class="hero__paragraph">Here you can see a little about me as a person and what I know about programming :)</p>
-        <a href="#projects" class="cta">Start the tour now!</a>
     </section>
-    <h3>Inicio</h3>
-{% if request.user.is_authenticated %}
-    <hr>
-    <h4>
-        {{ user.username | upper }}, bienvenido
-    </h4>
-{% endif %}
+    <a href="#projects" class="cta">Start the tour now!</a>
 </header>
 
 <div class= "container p-4">
@@ -95,3 +88,11 @@
 </script>
 
 {% endblock %}
+
+<!--<h3>Inicio</h3>
+{% if request.user.is_authenticated %}
+    <hr>
+    <h4>
+        {{ user.username | upper }}, bienvenido
+    </h4>
+{% endif %}-->

@@ -16,15 +16,21 @@
             <a class="nav-link" href="#contacto">Contact</a>
           </li>
           {% if request.user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'hellologin' %}">Log out!</a>
-          </li>
+          <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none; padding:0;">
+                <img src="{% static 'portfolio/logout.png' %}" alt="Logout" class="logoutimg">
+            </button>
+        </form>
+          </a>
           {% else %}
+          <a class="nav-link" href="{% url 'hellologin' %}">
+            <img src="{% static 'portfolio/login.png' %}" class="img-fluid loginimg" alt="Login">
+          </a>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'hellologin' %}">Sign in!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'helloregister' %}">Sing up!</a>
+            <a class="nav-link" href="{% url 'helloregister' %}">
+              <img src="{% static 'portfolio/register.png' %}" class="img-fluid registerimg" alt="Signup">
+            </a>
           </li>
           {% endif %}
           <li class="nav- d-flex align-items-center">
