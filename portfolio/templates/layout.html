@@ -18,13 +18,16 @@
 
     
 </head>
-<body class="text-light">
+<body class="d-flex flex-column min-vh-100 text-light">
+
     
     {% include 'partials/navbar.html' %}
-    <div class= "container-fluid p-0">
-    {% block content %}
+    <div class= "container-fluid p-0 flex-grow-1">
+    {% block content %}    
+
     {% endblock %}
     </div>
+    {% include 'partials/footer.html' %}
 
 </body>
 </html>

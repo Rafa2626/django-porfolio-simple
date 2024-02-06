@@ -13,6 +13,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 .hero {
@@ -135,6 +136,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center; 
+    background-color: black;
 }
 
 .github {
@@ -163,7 +165,7 @@ body {
 
 
 .bg-different-color {
-    background-color:#A3E4D7;
+    background-color:#45B39D;
 }
 
 .boton {
@@ -182,7 +184,42 @@ body {
 .about {
     justify-content: center;
     text-align: center; 
+    font-family: 'Poppins';
+    font-style: normal;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+    color: #ee9f7a;
 }
+
+.meabout {
+    justify-content: center;
+    text-align: center; 
+    font-family: 'Poppins';
+    font-style: normal;
+    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FF;
+    color: #ee9f7a;
+    font-size: 40px;
+}
+
+.skills {
+    margin-top: 20px;
+  }
+  
+  .skills h3 {
+    font-size: 1.5em;
+  }
+  
+  .skills ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills li {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+  
 
 .loginimg {
     max-width: 50px;
@@ -206,3 +243,24 @@ body {
     height: auto;
     margin-right: 0px;
 }
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skills li {
+    background-color: #fff; /* Fondo blanco para las cajas */
+    color: #45B39D; /* Letras negras */
+    border: 2px solid #ccc; /* Borde sólido con color claro */
+    border-radius: 20px; /* Bordes redondeados */
+    display: inline-block; /* Para que cada elemento <li> se muestre en línea */
+    margin: 10px; /* Aumenta el margen para mayor separación */
+    padding: 5px 10px; /* Ajusta el espacio dentro de cada caja */
+    font-weight: bold; /* Opcional: Hace que el texto sea negrita */
+    transition: transform 0.3s ease; /* Transición suave para el efecto al pasar el mouse */
+  }
+
+  .skills li:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse para un efecto interactivo */
+  }

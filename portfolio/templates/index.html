@@ -35,64 +35,34 @@
     {% endfor %}
 </div>
 
+   
+    <div class="row my-4">
+    <span class="meabout">ABOUT ME</span>
+            <div class="col-md-6 text-right">
+        <h3 class="about">Get to know me!</h3>
+        <p>Hi there! I'm Eniixx, an aspiring software developer currently pursuing a Technical Degree in Programming. I've recently completed a Django course and have hands-on experience building websites with Python. My journey into the world of programming started with a fascination for crafting dynamic web experiences, which led me to delve into Django and Python. Alongside, I've also honed my skills in Lua scripting within Roblox Studio, where I've enjoyed bringing imaginative game concepts to life. Although my journey is just beginning, I'm enthusiastic about expanding my knowledge and skills in both web development and game scripting, eager to contribute to innovative projects and continue growing as a developer.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <h3 class="about">My Skills</h3>
+        <div class="skills">
+            <ul>
+              <li>Python</li>
+              <li>Django</li>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Lua</li>
+              <li>Roblox Studio</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>SQL Basics</li>
+            </ul>
+          </div>
+      </div>
 
-
-<div class="row my 4 text-center">
-    
-    <h3 class="about">About me!</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima maiores architecto repellendus pariatur. Maxime sed culpa quos perspiciatis, impedit id beatae magni quae numquam exercitationem vitae vero aliquam distinctio sequi. Dicta corporis temporibus velit nisi amet labore beatae quam veritatis ullam illo reiciendis delectus obcaecati quo explicabo neque adipisci vel, repellendus repellat voluptates! Saepe alias perspiciatis id nisi quas minima quos magni impedit vitae assumenda. Eaque molestias mollitia nobis quibusdam ut ullam saepe pariatur distinctio dolore, ea voluptate, sed dolorum similique cum in expedita. Enim natus, blanditiis sequi incidunt voluptas hic dolores quam in voluptatum omnis atque tempore quos assumenda.
-    </p>    
+    </div>
+  </div>
 </div>
-</div>
 
 
-<footer class="footer bg-different-color full-height-section" id="contacto" >
-    <section class="footer__container container">
-        <p class="work">Let's work together!</p>
-        <button id="copyEmailButton" class="btn btn-primary btn-lg rounded my-3 boton">Email me</button>
-        <p>&copy;Rafael Deacon 2024 
-            <a href="https://github.com/Rafa2626">
-                <img src="{% static 'portfolio/github.png' %}" class="img-fluid github" alt="">
-            </a>
-            <a href="https://ar.linkedin.com/">
-                <img src="{% static 'portfolio/linkedin.png' %}" class="img-fluid linkedin" alt="">
-            </a>                     
-        </p>
-    </section>
-</footer>
-
-<script>
-    document.getElementById('copyEmailButton').addEventListener('click', function() {
-        var emailToCopy = 'rafaeldeacon15@gmail.com';
-        var textarea = document.createElement('textarea');
-        textarea.value = emailToCopy;
-
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = 0;
-
-        document.body.appendChild(textarea);
-
-        textarea.select();
-        document.execCommand('copy');
-
-        document.body.removeChild(textarea);
-
-        Swal.fire({
-            title: 'Email correctly copied!',
-            text: emailToCopy,
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        });
-    });
-
-</script>
 
 {% endblock %}
-
-<!--<h3>Inicio</h3>
-{% if request.user.is_authenticated %}
-    <hr>
-    <h4>
-        {{ user.username | upper }}, bienvenido
-    </h4>
-{% endif %}-->

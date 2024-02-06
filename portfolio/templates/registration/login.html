@@ -114,9 +114,11 @@
     </form>
     {% if messages %}
     <div class="alert alert-danger">
+        <ul>
       {% for message in messages %}
         {{ message }}
       {% endfor %}
+    </ul>
     </div>
     {% endif %}
 </div>

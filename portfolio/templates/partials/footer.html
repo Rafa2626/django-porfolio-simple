@@ -1,0 +1,42 @@
+{% load static %}
+
+<footer class="footer bg-different-color " id="contacto" >
+    <section class="footer__container container">
+        <p class="work">Let's work together!</p>
+        <button id="copyEmailButton" class="btn btn-primary btn-lg rounded my-3 boton">Email me</button>
+        <p>&copy;Rafael Deacon 2024 
+            <a href="https://github.com/Rafa2626">
+                <img src="{% static 'portfolio/github.png' %}" class="img-fluid github" alt="">
+            </a>
+            <a href="https://ar.linkedin.com/">
+                <img src="{% static 'portfolio/linkedin.png' %}" class="img-fluid linkedin" alt="">
+            </a>                     
+        </p>
+    </section>
+</footer>
+
+<script>
+    document.getElementById('copyEmailButton').addEventListener('click', function() {
+        var emailToCopy = 'rafaeldeacon15@gmail.com';
+        var textarea = document.createElement('textarea');
+        textarea.value = emailToCopy;
+
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = 0;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+        document.execCommand('copy');
+
+        document.body.removeChild(textarea);
+
+        Swal.fire({
+            title: 'Email correctly copied!',
+            text: emailToCopy,
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        });
+    });
+
+</script>

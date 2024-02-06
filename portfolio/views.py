@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Project
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+from django.contrib.auth import logout as logouts
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -21,12 +21,12 @@ def hellologin(request):
             # Redirecciona a una página de éxito.
             return redirect('home')
         else:
-            # Agrega un mensaje de error
+            # En lugar de redireccionar, renderiza la misma página con un mensaje de error.
             messages.error(request, 'Username or password not correct')
-            # Redirecciona nuevamente a la página de inicio de sesión
-            return redirect('hellologin')
+            return render(request, "registration/login.html")  # Asegúrate de tener la ruta correcta aquí
     else:
-        return render(request, "login.html")
+        return render(request, "registration/login.html")  # Asegúrate de tener la ruta correcta aquí
+
 
 def helloregister(request):
     if request.method == 'POST':
