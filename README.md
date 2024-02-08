@@ -21,10 +21,6 @@ Este proyecto se presenta como una solución elegante y eficiente para aquellos 
 - **Base de Datos:** SQLite3, ofreciendo un sistema de gestión de base de datos ligero y eficaz para proyectos de esta envergadura.
 
 
-# Portfolio Django Simple para Principiantes
-
-Este proyecto es un portfolio simple desarrollado en Django, dirigido a principiantes en el framework. Utiliza Bootstrap para el diseño, JavaScript para funcionalidades específicas, y SQLite3 como base de datos. Es ideal para mostrar proyectos de forma sencilla, permitiendo crear, editar y eliminar entradas desde una interfaz de administración.
-
 ## Cómo Empezar
 
 Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
