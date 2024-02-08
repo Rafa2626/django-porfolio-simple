@@ -25,20 +25,6 @@ Este proyecto se presenta como una solución elegante y eficiente para aquellos 
 
 Este proyecto es un portfolio simple desarrollado en Django, dirigido a principiantes en el framework. Utiliza Bootstrap para el diseño, JavaScript para funcionalidades específicas, y SQLite3 como base de datos. Es ideal para mostrar proyectos de forma sencilla, permitiendo crear, editar y eliminar entradas desde una interfaz de administración.
 
-## Características
-
-- **CRUD de Proyectos**: Crea, lee, actualiza y elimina proyectos fácilmente.
-- **Autenticación de Usuarios**: Permite el registro de nuevos usuarios y la autenticación de los mismos.
-- **Edición de Perfil**: Los usuarios pueden editar la información de su propio perfil.
-- **Sección de Contacto**: Incluye una sección de contacto con funcionalidad para copiar el email al portapapeles, facilitando la comunicación.
-
-## Tecnologías Utilizadas
-
-- **Backend**: Django (Python)
-- **Frontend**: HTML, CSS, Bootstrap
-- **JavaScript**: Para funcionalidades específicas como la sección de contacto.
-- **Base de Datos**: SQLite3
-
 ## Cómo Empezar
 
 Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
