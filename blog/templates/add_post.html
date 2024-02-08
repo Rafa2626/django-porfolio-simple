@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="add-post-container">
+    <div class="add-post-form">
+        <h2>Add New Post</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_title" class="form-label">Title:</label>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                <label for="id_description" class="form-label">Description:</label>
+                {{ form.description }}
+            </div>
+            <div class="form-group file-upload-wrapper">
+                {{ form.image.label_tag }}
+                <label for="id_image" class="file-upload-btn">Choose File</label>
+                {{ form.image }}
+                <span id="file-chosen">No file chosen</span>
+            </div>
+            <button type="submit" class="submit">Save Post</button>
+        </form>
+    </div>
+</div>
+
+
+<style>
+.file-upload-wrapper {
+        text-align: center;
+    }
+    .file-upload-btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #id_image {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    .file-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.file-upload-wrapper label,
+.file-upload-wrapper input,
+.file-upload-wrapper #file-chosen {
+    margin: 5px; 
+}
+    .add-post-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        
+    }
+
+    .add-post-form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    .add-post-form h2 {
+        color: #000000; /* Color de texto negro */
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        color: #000000; /* Color de texto negro */
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-control {
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ced4da; /* Color del borde */
+        
+    }
+
+    .submit {
+        background-color: #007bff; /* Color de botón azul */
+        color: #ffffff; /* Color de texto blanco */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        transition: background-color 0.4s ease-in-out;
+    }
+
+    .submit:hover, .submit:focus {
+        background-color: #0056b3; /* Color de botón azul oscuro al pasar el ratón */
+    }
+</style>
+{% endblock %}

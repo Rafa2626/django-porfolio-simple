@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .delete-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: transparent;
+    }
+
+    .delete-container .delete-form {
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 8px rgba(0,0,0,0.1);
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .delete-container .delete-form h2 {
+        color: #000000;
+        margin-bottom: 20px;
+    }
+
+    .submit.delete {
+        background-color: #dc3545; /* Rojo */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 16px;
+        transition: background-color 0.4s ease-in-out;
+    }
+
+    .submit.delete:hover, .submit.delete:focus {
+        background-color: #c82333; /* Rojo oscuro */
+    }
+
+    .delete-container .delete-form .link {
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 15px;
+        color: #007bff;
+        font-weight: bold;
+    }
+</style>
+<div class="delete-container">
+    <div class="delete-form">
+        <h2>¿Estás seguro de que quieres borrar "{{ post.title }}"?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="submit delete">Sí, borrar</button>
+        </form>
+        <a href="{% url 'blog:post_detail' post.id %}" class="link">No, volver</a>
+    </div>
+</div>
+
+{% endblock %}

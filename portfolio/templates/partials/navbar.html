@@ -16,33 +16,39 @@
             <a class="nav-link" href="#contacto">Contact</a>
           </li>
           {% if request.user.is_authenticated %}
-          <form action="{% url 'logout' %}" method="POST">
-            {% csrf_token %}
-            <button type="submit" style="background:none; border:none; padding:0;">
-                <img src="{% static 'portfolio/logout.png' %}" alt="Logout" class="logoutimg">
-            </button>
-        </form>
-          </a>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'editusers' %}">Edit User</a>
-          </li>
+            <form action="{% url 'logout' %}" method="POST" class="nav-item">
+              {% csrf_token %}
+              <button type="submit" style="background:none; border:none; padding:0;">
+                  <img src="{% static 'portfolio/logout.png' %}" alt="Logout" class="logoutimg">
+              </button>
+            </form>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'editusers' %}">Edit User</a>
+            </li>
+            {% if request.user.is_staff or request.user.is_superuser %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog:add_post' %}">Add Post</a>
+              </li>
+            {% endif %}
           {% else %}
-          <a class="nav-link" href="{% url 'hellologin' %}">
-            <img src="{% static 'portfolio/login.png' %}" class="img-fluid loginimg" alt="Login">
-          </a>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'helloregister' %}">
-              <img src="{% static 'portfolio/register.png' %}" class="img-fluid registerimg" alt="Signup">
-            </a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'hellologin' %}">
+                <img src="{% static 'portfolio/login.png' %}" class="img-fluid loginimg" alt="Login">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'helloregister' %}">
+                <img src="{% static 'portfolio/register.png' %}" class="img-fluid registerimg" alt="Signup">
+              </a>
+            </li>
           {% endif %}
-          <li class="nav- d-flex align-items-center">
-            <a class="btn btn-primary brn-sm" 
-               href="{%static 'portfolio/CV test.pdf'%}"
+          <li class="nav-item d-flex align-items-center">
+            <a class="btn btn-primary btn-sm" 
+               href="{% static 'portfolio/CV test.pdf' %}"
                target="_blank"
                >Download CV</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+</nav>

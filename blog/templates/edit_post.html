@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    .edit-post-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: transparent;
+    }
+
+    .edit-post-form {
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 8px rgba(0,0,0,0.1);
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .edit-post-form h2 {
+        text-align: center;
+    }
+
+    .edit-post-form h2, .edit-post-form label, .edit-post-form p, .edit-post-form a {
+        color: #000000;
+    }
+
+    .edit-post-form input[type="text"], 
+    .edit-post-form input[type="password"],
+    .edit-post-form input[type="file"] {
+        padding: 10px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        color: #000000;
+    }
+
+    .btn-save-changes {
+        background-color: #007bff; /* Fondo azul */
+        color: #FFFFFF; /* Texto blanco */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.4s ease-in-out;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .btn-save-changes:hover, .btn-save-changes:focus {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="edit-post-container">
+    <div class="edit-post-form">
+        <h2>Edit Post</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-save-changes">Save changes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
