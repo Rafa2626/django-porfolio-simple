@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+    
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: transparent;
+    }
+    
+    .login-container .login-form {
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 8px rgba(0,0,0,0.1);
+        width: 80%;
+        max-width: 400px;
+    }
+    
+    .login-container .login-form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #000000;
+    }
+    
+    .login-container .login-form h2 {
+        font-weight: bold;
+        font-size: 2em; 
+        margin-bottom: 20px;
+        color: #000000; 
+        text-align: center;
+    }
+    
+    .login-container .login-form input[type="text"],
+    .login-container .login-form input[type="password"],
+    .login-container .login-form input[type="email"] {
+        padding: 10px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-color: #FFFFFF;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        color: #000000;
+    }
+    
+    .submit {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+        cursor: pointer;
+        width: 70%;
+        margin-top: 20px;
+        font-size: 16px;
+        transition: background-color 0.4s ease-in-out;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .submit:hover, .submit:focus {
+        background-color: #0056b3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .login-container .login-form .redirect,
+    .login-container .login-form .link {
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: #007bff;
+    }
+    </style>
+    
+    <div class="login-container">
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <h2>Edit user</h2>
+            {% for field in form %}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit" class="submit">Save changes</button>
+    </form>
+</div>
+
+{% endblock %}
